@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,24 +11,26 @@
     <title>Inscricoes Liga</title>
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="{% static 'css/homepage.css'%}">
     
     <!-- Favicon -->
-    <link rel="icon" href='img/marca-ensino-pesquisa-e-inovacao-horizontal.png'>
+    <link rel="icon" href="{% static 'img/marca-ensino-pesquisa-e-inovacao-horizontal.png' %}">
 
 </head>
 
+{% block body %}
 <body>
     <!-- Apresentação Logo LIGA HOME_PAGE -->
-    <img class="logo" src='img/marca-ensino-pesquisa-e-inovacao-horizontal.svg'>
+    <img class="logo" src="{% static 'img/marca-ensino-pesquisa-e-inovacao-horizontal.svg' %}">
     <!-- Container  BG -->
     <div class="container">
-       <div class="rectangle"><img class="rectangle" src='img/Rectangle2.svg'></div> 
-        <div class="rectangle1"><img class="rectangle1" src='img/Rectangle1.svg'></div> 
-        <img class="logo-congresso" src='img/VII-CONGRESSO.png'>
-        <a href='login.html'><button type="submit" id="botao">Login como <br>Congressista</button></a>
-        <img class="arrow" src='img/Arrow.svg'>
+       <div class="rectangle"><img class="rectangle" src="{% static 'img/Rectangle2.svg' %}"></div> 
+        <div class="rectangle1"><img class="rectangle1" src="{%  static 'img/Rectangle1.svg' %}"></div> 
+        <img class="logo-congresso" src="{% static 'img/VII-CONGRESSO.png' %}">
+        <a href="{% url 'login' %}"><button type="submit" id="botao">Login como <br>Congressista</button></a>
+        <img class="arrow" src="{% static 'img/Arrow.svg' %}">
     </div>
 </body>
 
+{% endblock %}
 </html>

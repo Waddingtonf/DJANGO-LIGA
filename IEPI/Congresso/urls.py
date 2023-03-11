@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from . import views
+from Congresso import views
+
 
 urlpatterns = [
-    path('/', views.home, name='home'),
-    path('/login', views.login, name='login'),
-    path('/inscritos', views.inscritos, name='inscritos')
+    path('', views.home, name='home'),
+    path('login', views.login, name='login'),
+    path('inscritos', views.inscritos, name='inscritos'),
+    path('dologin/', views.dologin, name='dologin'),
+    path('cadastro', views.cadastro, name='cadastro'),
+    path('docad/', views.docad, name='docad'),
 ]
