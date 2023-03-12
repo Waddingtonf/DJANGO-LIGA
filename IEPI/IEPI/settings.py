@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'IEPI.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'liga',
+        'NAME': 'railway',
         'USER': 'root',
-        'PASSWORD': 'wK050885',
-        'HOST': '127.0.0.1',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'PASSWORD': '2aL2TFQACZN4bsemppP5',
+        'HOST': 'containers-us-west-195.railway.app',   # Or an IP Address that your DB is hosted on
+        'PORT': '7624',
     }
 }
 
@@ -103,6 +103,12 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+]
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
 ]
 
 

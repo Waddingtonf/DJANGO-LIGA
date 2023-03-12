@@ -134,7 +134,7 @@ html{
 .hero-board.flex{
     display: flex;
     position: absolute;
-    margin-top: 10vh;
+    margin-top: 11vh;
     margin-left: 4vw;
     gap: 12px;
     flex-direction: row;
@@ -263,7 +263,7 @@ html{
 
 .waiting1{
     font-size: 11px;
-    margin-top: 12vh;
+    margin-top: 13vh;
     justify-content: left;
     align-items: center;
     margin-left: 38vw;
@@ -278,7 +278,7 @@ html{
 
 .waiting2{
     font-size: 11px;
-    margin-top: 12vh;
+    margin-top: 13vh;
     justify-content: left;
     align-items: center;
     margin-left: 65vw;
@@ -498,6 +498,13 @@ html{
     width: 15px;
     height: 15px;
 }
+
+.verified{
+    width: 15px;
+    height: 15px;
+}
+
+
 
 /* .footer{
     width: 100vw;

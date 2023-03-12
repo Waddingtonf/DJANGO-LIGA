@@ -25,4 +25,7 @@ urlpatterns = [
     path('dologin/', views.dologin, name='dologin'),
     path('cadastro', views.cadastro, name='cadastro'),
     path('docad/', views.docad, name='docad'),
+    path('congresso-simulacao', views.confirm, name='confirmarpresença'),
+    path('congresso', views.congresso, name='congresso'),
+    path('doconfirm/', views.doconfirm, name='doconfirm'),
 ]

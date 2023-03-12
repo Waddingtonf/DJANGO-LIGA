@@ -8,17 +8,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Inscritos</title>
+    <title>Página de Inscritos - Congresso da Liga</title>
 
     <!-- Estilos -->
     <link rel="stylesheet" href= "{% static 'css/inscritos.css' %}">
 
     <!-- Favicon -->
-    <link rel="icon" href="{% static 'img/marca-ensino-pesquisa-e-inovacao-horizontal.png'>
+    <link rel="icon" href="{% static 'img/marca-ensino-pesquisa-e-inovacao-horizontal.png' %}"
 
     <!-- Scripts -->
 
-    <script defer href='js/inscritos-js/script.js'> </script>
+    <script defer href="{% static 'js/inscritos-js/script.js' %}"> </script>
 
 </head>
 
@@ -38,10 +38,17 @@
             <p> Prezado, </p>
         </div>
 
+        {% if request.user.is_authenticated %}
         <div class="joining">
-            <p> @CONGRESSISTA </p>
+            <p> {{ user.username }} </p>
             <a ><img onclick=changeImage() class="eye" id="eye" src="{% static 'img/inscritos/OlhosNotSelected.svg' %}"></a>
         </div>
+        {% else %}
+        <div class="joining">
+            <p> @Anonymous </p>
+            <a ><img onclick=changeImage() class="eye" id="eye" src="{% static 'img/inscritos/OlhosNotSelected.svg' %}"></a>
+        </div>
+        {% endif %}
     </header>
     <!-- Div Hero -->
     <div class="hero">
@@ -117,11 +124,23 @@
                 <span class="text-curso">SIMPÓSIO CC E CME</span>
                 <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
             </div>
+            {% if msg == 1 %}
+
             <div id="congresso">
                 <span class="logo-curso"><img src="{% static 'img/marca-ensino-pesquisa-e-inovacao-horizontal.png' %}"></span>
                 <span class="text-curso">EVENTO ESPECIAL - <br><br>CONGRESSO DA LIGA</span>
+                <span class="verified"><img src="{% static 'img/inscritos/Check.svg' %}"></span>
+            </div>
+
+            {% else %}
+            <div id="congresso">
+                <span class="logo-curso"><img src="{% static 'img/marca-ensino-pesquisa-e-inovacao-horizontal.png' %}"></span>
+                <a class='links' style="color:#BA1065;list-style: none;text-decoration: none;" href="{% url 'congresso' %}"><span class="text-curso">EVENTO ESPECIAL - <br><br>CONGRESSO DA LIGA</span> </a>
                 <span class="notverified"><img src="{% static 'img/inscritos/relogio.svg' %}"></span>
             </div>
+
+
+            {% endif %}
         </section>
         <section id="informations">
             <span class="text-informations"></span>
